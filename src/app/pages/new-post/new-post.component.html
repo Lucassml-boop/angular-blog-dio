@@ -1,0 +1,19 @@
+<div class="container__new-post">
+    <h1>Criar nova publicação</h1>
+    <form (ngSubmit)="onSubmit()">
+      <div>
+        <label for="title">Título:</label>
+        <input type="text" id="title" [(ngModel)]="post.title" name="title" required>
+      </div>
+      <div>
+        <label for="description">Descrição:</label>
+        <textarea id="description" [(ngModel)]="post.description" name="description" required></textarea>
+      </div>
+      <div>
+        <label for="photoCover">Adicione a imagem:</label>
+      <input type="file" id="photoCover" (change)="onFileSelected($event)" required>
+    </div>
+      <button type="submit">Cria novo post</button>
+    </form>
+    <button class="back-button" (click)="goBack()">Voltar</button>
+  </div>

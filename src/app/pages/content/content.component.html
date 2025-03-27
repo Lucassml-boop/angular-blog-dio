@@ -1,15 +1,26 @@
 <div class="container__content">
   <div class="content__cover">
     <img src="{{ photoCover }}" alt="" srcset="">
+    <p class="post-date">Publicado em: {{ createdAt | date:'dd/MM/yyyy HH:mm' }}</p>
   </div>
   <div class="content__title">
     <h1>{{ contentTitle }}</h1>
     <hr />
+    <div class="content__description">
+      <p>{{ contentDescription }}</p>
+    </div>
   </div>
-  <div class="content__description">
+  <div class="content__buttons">
     <a [routerLink]="['']"> << VOLTAR </a>
-    <p>
-      {{ contentDescription }}
-    </p>
+    <button (click)="deletePost()">Excluir Post</button>
+  </div>
+
+  <div class="comments-section">
+    <h2>Comentários</h2>
+    <ul>
+      <li *ngFor="let comment of comments">{{ comment }}</li>
+    </ul>
+    <textarea [(ngModel)]="newComment" placeholder="Adicione um comentário"></textarea>
+    <button (click)="addComment()">Comentar</button>
   </div>
 </div>

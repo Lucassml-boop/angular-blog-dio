@@ -8,4 +8,25 @@
   }
 }
 
+.container__home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post {
+  width: 80%;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.post img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 10px;
+}
+
 
