@@ -1,27 +1,67 @@
-# AngularBlog
+# Angular Blog - DIO
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.1.2.
+Este projeto foi desenvolvido como parte do curso da Digital Innovation One (DIO) e consiste em um blog simples construído com Angular.
 
-## Development server
+## 🚀 Tecnologias Utilizadas
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Bootstrap (opcional)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 📌 Funcionalidades
+- Listagem de posts do blog
+- Exibição de detalhes de cada post
+- Layout responsivo
 
-## Code scaffolding
+## 📂 Estrutura do Projeto
+```
+angular-blog/
+│-- src/
+│   ├── app/
+│   │   ├── components/  # Componentes reutilizáveis
+│   │   ├── pages/       # Páginas principais do blog
+│   │   ├── services/    # Serviços para manipulação de dados
+│   │   ├── app.module.ts  # Módulo principal do Angular
+│   ├── assets/         # Imagens e arquivos estáticos
+│   ├── index.html      # Arquivo principal HTML
+│   ├── styles.css      # Estilos globais
+│-- angular.json       # Configuração do Angular
+│-- package.json       # Dependências do projeto
+│-- README.md          # Documentação do projeto
+```
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🔧 Como Executar o Projeto
 
-## Build
+1. **Clone o repositório:**
+   ```bash
+   git clone https://github.com/Lucassml-boop/angular-blog-dio.git
+   ```
+2. **Acesse o diretório do projeto:**
+   ```bash
+   cd angular-blog-dio
+   ```
+3. **Instale as dependências:**
+   ```bash
+   npm install
+   ```
+4. **Inicie o servidor de desenvolvimento:**
+   ```bash
+   ng serve
+   ```
+5. **Acesse o projeto no navegador:**
+   ```
+   http://localhost:4200/
+   ```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## 🛠️ Melhorias Futuras
+- Implementação de um backend para persistência dos posts
+- Adicionar sistema de autenticação
+- Melhorar o design e responsividade
 
-## Running unit tests
+## 📜 Licença
+Este projeto foi desenvolvido para fins educacionais e não possui uma licença específica.
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+---
+**Desenvolvido por [Lucas](https://github.com/Lucassml-boop)** 🚀
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
