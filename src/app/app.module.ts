@@ -13,6 +13,7 @@ import { ContentComponent } from './pages/content/content.component';
 import { NewPostComponent } from './pages/new-post/new-post.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
+import { MediumCardComponent } from './components/medium-card/medium-card.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { RegisterComponent } from './pages/register/register.component';
     ContentComponent,
     NewPostComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    MediumCardComponent
   ],
   imports: [
     BrowserModule,

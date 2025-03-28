@@ -39,3 +39,52 @@
   text-align: center;
   margin-top: 5px;
 }
+
+.container__small-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.container__small-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.container__small-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.container__small-card h1 {
+  font-size: 1rem;
+  text-align: center;
+  color: #333;
+}
+
+.container__small-card__separator hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 10px 0;
+}
+
+
+.side-card {
+  width: 250px;
+  padding: 8px;
+}
+
+.side-card img {
+  height: 80px;
+}
+
+.side-card h1 {
+  font-size: 0.9rem;
+  color: #555;
+}

@@ -1,24 +1,28 @@
-<div class="container__small-card">
-
-  <div class="container__small-card-content">
-    <div class="small-card__photo">
-      <img
-        [src]="photoCover"
-        alt=""
-      >
-    </div>
-
-    <div class="small-card__title">
-      <h1><a [routerLink]="['/content', Id]">{{ cardTitle }}</a></h1>
-    </div>
-
-    <div class="small-card__legend">
-      <p>{{ cardLegend }}</p>
-    </div>
+<div 
+  class="container__small-card" 
+  [ngClass]="{ 'side-card': isSideCard }" 
+  (click)="navigateToContent()"
+>
+  <div class="small-card__photo">
+    <img
+      src="{{ photoCover }}"
+      alt=""
+      height="100px"
+      srcset=""
+    >
   </div>
 
-  <div class="container__small-card__separator">
-    <hr>
+  <div class="small-card__title">
+    <h1>
+      <a [routerLink]="['/content', Id]">{{ cardTitle }}</a>
+    </h1>
   </div>
 
+  <div class="small-card__description" *ngIf="cardLegend">
+    <p>
+      <a [routerLink]="['/content', Id]">
+        {{ cardLegend }}
+      </a>
+    </p>
+  </div>
 </div>

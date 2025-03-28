@@ -3,7 +3,18 @@ export let dataFake = loadDataFromLocalStorage();
 function loadDataFromLocalStorage(): any[] {
   const savedData = localStorage.getItem('dataFake');
   if (savedData) {
-    return JSON.parse(savedData);
+    const parsedData = JSON.parse(savedData);
+
+    
+    const uniqueIds = new Set();
+    parsedData.forEach((item: any) => {
+      if (uniqueIds.has(item.id)) {
+        item.id = Date.now().toString() + Math.random().toString(36).substr(2, 9); // Gera um novo ID único
+      }
+      uniqueIds.add(item.id);
+    });
+
+    return parsedData;
   }
 
   return [
@@ -23,9 +34,24 @@ function loadDataFromLocalStorage(): any[] {
       createdAt: new Date().toISOString(),
       comments: [] 
     },
-  ]
+    
+  ];
 }
 
 export function saveDataToLocalStorage(): void {
   localStorage.setItem('dataFake', JSON.stringify(dataFake));
+}
+
+export function addNewPost(title: string, description: string, photoCover: string): void {
+  const newPost = {
+    id: Date.now().toString(), 
+    title,
+    description,
+    photoCover,
+    createdAt: new Date().toISOString(),
+    comments: []
+  };
+
+  dataFake.push(newPost);
+  saveDataToLocalStorage();
 }

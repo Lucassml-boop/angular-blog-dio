@@ -58,7 +58,7 @@ export class NewPostComponent {
         this.post.photoCover = e.target.result;
         this.post.id = (dataFake.length + 1).toString();
         this.post.createdAt = new Date().toISOString();
-        dataFake.push({ ...this.post });
+        dataFake.push({ ...this.post }); // Adiciona o novo post ao final da lista
         saveDataToLocalStorage();
         this.router.navigate(['/']); 
       };
@@ -66,7 +66,7 @@ export class NewPostComponent {
     } else {
       this.post.id = (dataFake.length + 1).toString();
       this.post.createdAt = new Date().toISOString();
-      dataFake.push({ ...this.post });
+      dataFake.push({ ...this.post }); // Adiciona o novo post ao final da lista
       saveDataToLocalStorage();
       this.router.navigate(['/']); 
     }

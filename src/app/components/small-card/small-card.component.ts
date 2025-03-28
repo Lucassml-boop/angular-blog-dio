@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-small-card',
@@ -8,21 +9,26 @@ import { Component, Input, OnInit } from '@angular/core';
 export class SmallCardComponent implements OnInit {
 
   @Input()
-  photoCover:string = ""
+  photoCover: string = "";
 
   @Input()
-  cardTitle:string = ""
+  cardTitle: string = "";
 
   @Input()
-  Id:string="0"
+  Id: string = "0";
 
   @Input()
   cardLegend: string = "";
 
+  @Input()
+  isSideCard: boolean = false; // Adicionado para diferenciar os cards laterais
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  navigateToContent(): void {
+    this.router.navigate(['/content', this.Id]);
+  }
 }
