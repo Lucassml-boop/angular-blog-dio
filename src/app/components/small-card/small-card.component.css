@@ -32,3 +32,10 @@
 .container__small-card__separator{
   margin-top: 10px;
 }
+
+.small-card__legend {
+  font-size: 0.9rem;
+  color: #666;
+  text-align: center;
+  margin-top: 5px;
+}

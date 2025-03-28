@@ -15,7 +15,7 @@ export class ContentComponent implements OnInit {
   comments: string[] = [];
   newComment: string = "";
   
-  private id: string | null = "0";
+  private id: string | null = null;
 
   constructor(
     private route: ActivatedRoute,
@@ -25,20 +25,22 @@ export class ContentComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(value => {
       this.id = value.get("id");
+      this.setValuesToComponent(this.id);
     });
-
-    this.setValuesToComponent(this.id);
   }
 
   setValuesToComponent(id: string | null) {
-    const result = dataFake.filter(article => article.id == id)[0];
+    const result = dataFake.find(article => article.id === id);
 
     if (result) {
+      this.photoCover = result.photoCover;
       this.contentTitle = result.title;
       this.contentDescription = result.description;
-      this.photoCover = result.photoCover;
       this.createdAt = result.createdAt;
       this.comments = result.comments || []; 
+    } else {
+      // Redireciona para a página inicial se o post não for encontrado
+      this.router.navigate(['/home']);
     }
   }
 
@@ -60,7 +62,7 @@ export class ContentComponent implements OnInit {
       if (index !== -1) {
         dataFake.splice(index, 1); 
         saveDataToLocalStorage(); 
-        this.router.navigate(['/']); 
+        this.router.navigate(['/home']); // Redireciona para a página inicial após excluir
       }
     }
   }

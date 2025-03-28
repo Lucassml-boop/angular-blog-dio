@@ -4,7 +4,7 @@
   <div class="articles__main">
     <app-big-card
       *ngIf="posts.length > 0"
-      [Id]="posts[0].id"
+      [routerLink]="['/content', posts[0].id]"
       [photoCover]="posts[0].photoCover"
       [cardTitle]="posts[0].title"
       [cardDescription]="posts[0].description"
@@ -15,9 +15,22 @@
   <div class="articles__others">
     <app-small-card
       *ngFor="let post of posts.slice(1)"
-      [Id]="post.id"
+      [routerLink]="['/content', post.id]"
       [cardTitle]="post.title"
       [photoCover]="post.photoCover"
+    >
+    </app-small-card>
+  </div>
+
+  
+  <div class="articles__small-cards">
+    <h3>Outras Notícias</h3>
+    <app-small-card
+      *ngFor="let card of smallCards"
+      [routerLink]="['/content', card.id]"
+      [cardTitle]="card.title"
+      [photoCover]="card.photoCover"
+      [cardLegend]="'Esta é uma legenda para ' + card.title"
     >
     </app-small-card>
   </div>

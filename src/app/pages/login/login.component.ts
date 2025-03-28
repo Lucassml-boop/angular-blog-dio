@@ -17,9 +17,9 @@ export class LoginComponent {
     const registeredUsername = localStorage.getItem('registeredUsername');
     const registeredPassword = localStorage.getItem('registeredPassword');
 
-    if (this.username === validUsername && this.password === validPassword) {
-      localStorage.setItem('isLoggedIn', 'true');
-      this.router.navigate(['/home']);
+    if (this.username === registeredUsername && this.password === registeredPassword) {
+      localStorage.setItem('isLoggedIn', 'true'); 
+      this.router.navigate(['/home']); 
     } else {
       this.errorMessage = 'Usuário ou senha inválidos!';
     }

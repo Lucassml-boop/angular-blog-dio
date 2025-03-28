@@ -3,14 +3,17 @@
   <div class="container__small-card-content">
     <div class="small-card__photo">
       <img
-        src="{{ photoCover }}"
+        [src]="photoCover"
         alt=""
-        srcset=""
       >
     </div>
 
     <div class="small-card__title">
-      <h1><a [routerLink]="['content', Id]" >{{ cardTitle }}</a></h1>
+      <h1><a [routerLink]="['/content', Id]">{{ cardTitle }}</a></h1>
+    </div>
+
+    <div class="small-card__legend">
+      <p>{{ cardLegend }}</p>
     </div>
   </div>
 
@@ -19,6 +22,3 @@
   </div>
 
 </div>
-
-
-
